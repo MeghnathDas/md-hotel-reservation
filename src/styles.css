@@ -3,3 +3,10 @@
 .brand-logo {
   font-size: 1.5em;
 }
+
+.app-name {
+  padding-right: 8px;
+  color: yellow;
+  font-weight: bold;
+  font-size: 1.2em;
+}
