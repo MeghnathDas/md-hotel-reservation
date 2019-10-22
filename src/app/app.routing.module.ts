@@ -4,13 +4,13 @@ import { FrontDeskModule } from './front-desk/front-desk.module';
 
 const routes: Routes = [
   {
-    path: 'frontDesk',
+    path: 'front-desk',
     loadChildren: () => import('./front-desk/front-desk.module')
       .then(m => m.FrontDeskModule)
   },
   {
     path: '',
-    redirectTo: 'frontDesk',
+    redirectTo: 'front-desk',
     pathMatch: 'full'
   }
 ];
