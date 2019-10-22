@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { FrontDeskComponent } from './front-desk.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: FrontDeskComponent
   },
   /**{
     path: '',
