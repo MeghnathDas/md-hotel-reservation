@@ -1,15 +1,10 @@
 <ul class="nav nav-tabs" role="navigation">
-  <li class="nav-item">
-    <a class="nav-link active" routerLinkActive routerLink="dashboard">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive routerLink="check-in">Check In</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive routerLink="check-out">Check Out</a>
-  </li>
+	<li class="nav-item" *ngFor="let mnu of menus" (click)=onMenuSelect(mnu)>
+		<a [routerLink]="mnu.route"
+			[ngClass]="(mnu.id === selectedMnu.id)?'nav-link active': 'nav-link'">
+			{{mnu.caption}}
+		</a>
+	</li>
 </ul>
-
-<div class="cntainer1"> 
-  <router-outlet></router-outlet> 
-</div>
+<router-outlet></router-outlet>
+  

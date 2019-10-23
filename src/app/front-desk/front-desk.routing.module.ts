@@ -21,6 +21,10 @@ const routes: Routes = [
       {
         path: "check-out",
         component: CheckOutComponent
+      },
+      {
+        path: "",
+        redirectTo: "dashboard"
       }
     ]
   }
