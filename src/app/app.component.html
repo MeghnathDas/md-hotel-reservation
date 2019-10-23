@@ -1,15 +1,30 @@
 
-<nav>
-    <div class="nav-wrapper">
-      <ul class="left">
-        <li class="active"><a routerLink="front-desk">Front Desk</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
-    <div class="brand-logo app-name right">{{name}}</div>
-    </div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <span class="navbar-brand">{{name}}</span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown1" role="button">
+          Front Desk
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+          <a class="dropdown-item" routerLink="dashboard">Dashboard</a>
+          <a class="dropdown-item" routerLink="check-in">Check In</a>
+          <a class="dropdown-item" routerLink="check-out">Check Out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer" role="button">
+          Settings
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
-<div class="row">
-    <div class="col s12 m6">
-      <router-outlet></router-outlet>
-    </div>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>

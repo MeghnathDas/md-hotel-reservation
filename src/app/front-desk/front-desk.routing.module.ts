@@ -1,25 +1,31 @@
-import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { FrontDeskComponent } from './front-desk.component';
+import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from "@angular/core";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { CheckInComponent } from "./check-in/check-in.component";
+import { CheckOutComponent } from "./check-out/check-out.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component: FrontDeskComponent
+    path: "dashboard",
+    component: DashboardComponent
   },
-  /**{
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  }*/
-]
+  {
+    path: "check-in",
+    component: CheckInComponent
+  },
+  {
+    path: "check-out",
+    component: CheckOutComponent
+  },
+  {
+    path: "",
+    redirectTo: "dashboard",
+    pathMatch: "full"
+  }
+];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes),
-  ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class FrontDeskRoutingModule {
-  
-}
+export class FrontDeskRoutingModule {}
