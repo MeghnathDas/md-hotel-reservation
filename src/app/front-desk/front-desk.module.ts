@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FrontDeskComponent } from "./front-desk.component";
 import { FrontDeskRoutingModule } from "./front-desk.routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -12,6 +12,7 @@ import { CheckOutComponent } from "./check-out/check-out.component";
     DashboardComponent,
     CheckInComponent,
     CheckOutComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FrontDeskModule {}

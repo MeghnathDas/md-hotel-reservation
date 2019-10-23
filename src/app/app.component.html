@@ -7,18 +7,13 @@
 
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item" ngbDropdown>
-        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown1" role="button">
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer" role="button" routerLink="front-desk">
           Front Desk
         </a>
-        <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-          <a class="dropdown-item" routerLink="dashboard">Dashboard</a>
-          <a class="dropdown-item" routerLink="check-in">Check In</a>
-          <a class="dropdown-item" routerLink="check-out">Check Out</a>
-        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor: pointer" role="button">
+        <a class="nav-link" style="cursor: pointer" role="button" routerLink="settings">
           Settings
         </a>
       </li>

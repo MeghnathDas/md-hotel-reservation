@@ -6,10 +6,11 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing.module";
 
 import { AppComponent } from "./app.component";
+import { SettingsComponent } from "./settings/settings.component";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgbModule, AppRoutingModule],
-  declarations: [AppComponent],
+  declarations: [AppComponent, SettingsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

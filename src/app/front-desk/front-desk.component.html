@@ -1,2 +1,15 @@
-<p>This is Front desk</p>
-<app-dashboard></app-dashboard>
+<ul class="nav nav-tabs" role="navigation">
+  <li class="nav-item">
+    <a class="nav-link active" routerLinkActive routerLink="dashboard">Dashboard</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive routerLink="check-in">Check In</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive routerLink="check-out">Check Out</a>
+  </li>
+</ul>
+
+<div class="cntainer1"> 
+  <router-outlet></router-outlet> 
+</div>
