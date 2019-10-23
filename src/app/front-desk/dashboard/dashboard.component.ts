@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoomsService } from '../../services';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
+  rooms = [];
 
+  constructor(roomsServ: RoomsService) {
+    this.rooms = roomsServ.getRooms();
+  }
 }

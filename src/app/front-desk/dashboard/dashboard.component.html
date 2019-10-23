@@ -1,1 +1,8 @@
-<p>This is Dashboard</p>
+<div class="rooms-available">
+	<div class="card room-item" *ngFor="let room of rooms">
+		<div class="card-body">
+			<h3>{{room.num}}</h3>
+			<p>{{room.category}}</p>
+		</div>
+	</div>
+</div>

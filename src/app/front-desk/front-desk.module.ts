@@ -6,6 +6,7 @@ import { FrontDeskRoutingModule } from "./front-desk.routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { CheckInComponent } from "./check-in/check-in.component";
 import { CheckOutComponent } from "./check-out/check-out.component";
+import { RoomsService } from "../services";
 
 @NgModule({
   imports: [FrontDeskRoutingModule, CommonModule, FormsModule],
@@ -15,6 +16,7 @@ import { CheckOutComponent } from "./check-out/check-out.component";
     CheckInComponent,
     CheckOutComponent
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [RoomsService]
 })
 export class FrontDeskModule {}
