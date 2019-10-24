@@ -8,7 +8,7 @@ import { NavMenuItem } from '../models';
 })
 export class FrontDeskComponent implements OnInit {
   selectedMnu: NavMenuItem = {};
-  menus: NavMenuItem[] = [
+  menus = [
     { 
       id: 1,
       caption: 'Dashboard',

@@ -1,7 +1,7 @@
 <div class="shadow p-3 mb-5 bg-secondary">
   <ul class="nav nav-tabs" role="navigation">
     <li *ngFor="let mnu of menus" (click)=onMenuSelect(mnu) clsss="nav-item">
-      <a [routerLink]="mnu.route" [ngClass]="(mnu.id === selectedMnu.id)?'nav-link active': 'nav-link'">
+      <a [routerLink]="mnu.route" class="nav-link" routerLinkActive="active">
         {{mnu.caption}}
       </a>
     </li>
