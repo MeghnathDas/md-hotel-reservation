@@ -6,7 +6,15 @@
   font-size: 1em !important;
 }
 
-/*body {
-  height: 100%;
-  background: lightgray;
-}*/
+html, body {
+    height: 100%;
+    background: lightgray;
+}
+
+.nav-tabs .nav-link {
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+}
+.card {
+  border-radius: 0em;
+}

@@ -6,10 +6,28 @@
 }
 
 .rooms-available > div {
-  width: 150px;
+  width: 200px;
   height: 130px;
   margin-bottom: 6px;
   margin-right: 6px;
   text-align: left;
-  background: lightblue;
+}
+.room-desc-cat {
+  font-size: .8em;
+  font-weight: 500;
+}
+.room-desc-stat {
+  font-size: .8em;
+  font-weight: 500;
+}
+.room-empty {
+  background: #78af7d;
+}
+.room-occupied {
+  background: #6c97a5;
+  color: lightgray;
+}
+.room-dirty {
+  background: #6e654b;
+  color: white;
 }

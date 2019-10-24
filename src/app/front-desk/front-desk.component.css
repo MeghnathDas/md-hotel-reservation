@@ -1,5 +1,21 @@
-.nav-item act, .router-content {
-  min-height: 500px;
-  background: #f0f0f0;  
-  padding: 20px;
+/*.nav-link.active {
+  background: #ebebeb;
+  border-color: #ebebeb;
+}
+.nav-tabs {
+  background: lightgray;
+}*/
+.p-3 {
+  padding: 0rem!important;
+}
+a {
+  color:#dee2e6;
+}
+.nav-link.active, .nav-tabs {
+  border-color: white;
+}
+.router-content {
+  min-height: 78vh;
+  padding: 15px;
+  background: white;
 }

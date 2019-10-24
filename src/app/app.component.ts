@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Hotel Reservation System';
+  prodName = 'Hotel Reservation System';
+  coNme = 'MD';
   collapsed = true;
 }
