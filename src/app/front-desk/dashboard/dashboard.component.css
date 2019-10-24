@@ -1,14 +1,14 @@
 .rooms-available {
-  display: grid;
-  grid-gap: 10px;
-  background-color: rgb(139, 192, 236);
-  padding: 10px;
-  grid-template-columns: auto auto auto auto;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .rooms-available > div {
-  min-width: 50px;
-  max-width: 150px;
-  min-height: 50px;
-  max-height: 150px;
+  width: 150px;
+  height: 130px;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  text-align: left;
 }

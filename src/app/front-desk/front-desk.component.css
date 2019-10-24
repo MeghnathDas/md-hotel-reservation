@@ -1,3 +1,5 @@
-.container1 {
-  padding: 6px;
+.nav-item act, .router-content {
+  min-height: 500px;
+  background: lightblue;  
+  padding: 10px;
 }

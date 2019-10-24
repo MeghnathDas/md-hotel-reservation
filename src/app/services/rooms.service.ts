@@ -5,10 +5,12 @@ import { Room } from "../models";
 export class RoomsService {
   public getRooms(): Room[]{
     return [
-      {num: '101', category: 'AC Delux', capacity: 2},
-      {num: '102', category: 'AC Delux', capacity: 2},
-      {num: '103', category: 'AC Double', capacity: 4},
-      {num: '104', category: 'AC Delux', capacity: 2}
+      {num: '301', category: 'AC Delux', capacity: 2},
+      {num: '302', category: 'AC Delux', capacity: 2},
+      {num: '304', category: 'AC Delux', capacity: 2},
+      {num: '305', category: 'AC Double', capacity: 4},
+      {num: '401', category: 'AC Studio', capacity: 4},
+      {num: '402', category: 'AC Studio Prem', capacity: 6}
     ]
   }
 }
