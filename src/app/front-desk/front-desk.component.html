@@ -1,5 +1,6 @@
 <ul class="nav nav-tabs" role="navigation">
-	<li class="nav-item" *ngFor="let mnu of menus" (click)=onMenuSelect(mnu)>
+	<li *ngFor="let mnu of menus" (click)=onMenuSelect(mnu)
+  [ngClass]="(mnu.id === selectedMnu.id)?'nav-item act': 'nav-item'">
 		<a [routerLink]="mnu.route" [ngClass]="(mnu.id === selectedMnu.id)?'nav-link active': 'nav-link'">
 			{{mnu.caption}}
 		</a>
