@@ -1,5 +1,5 @@
 import { Room, RoomStatus } from "../models";
-import { OccupancyAction } from "../actions/room.action";
+import { OccupancyAction } from "../actions";
 
 const initialState: Room[] = [
   {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from "@ngrx/store";
-import { Room, AppState } from "../../models";
+import { Room, AppState } from "./models";
 
 @Component({
   selector: 'md-app',
@@ -8,7 +8,7 @@ import { Room, AppState } from "../../models";
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  prodName = 'Hotel Reservation System';
+  prodName = 'HMS';
   coNme = 'MD';
   collapsed = true;
 
