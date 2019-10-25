@@ -14,7 +14,7 @@
 }
 .room-desc-cat {
   font-size: .8em;
-  font-weight: 500;
+  font-weight: 400;
 }
 .room-desc-stat {
   font-size: .8em;
@@ -25,7 +25,7 @@
 }
 .room-occupied {
   background: #6c97a5;
-  color: lightgray;
+  color: #eadada;
 }
 .room-dirty {
   background: #6e654b;
