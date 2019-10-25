@@ -12,12 +12,14 @@ export class RoomsService {
   public getRooms(): Room[] {
     return [
       {
+        id: 1,
         num: "301",
         category: "AC Delux",
         capacity: 2,
         status: RoomStatus.UnOccupied
       },
       {
+        id: 2,
         num: "302",
         category: "AC Delux",
         capacity: 2,
@@ -26,24 +28,28 @@ export class RoomsService {
         expCheckoutDate: this.dummyExpChkOutDate
       },
       {
+        id: 3,
         num: "304",
         category: "AC Delux",
         capacity: 2,
         status: RoomStatus.Uncleaned
       },
       {
+        id: 4,
         num: "305",
         category: "AC Double",
         capacity: 4,
         status: RoomStatus.UnOccupied
       },
       {
+        id: 5,
         num: "401",
         category: "AC Studio",
         capacity: 4,
         status: RoomStatus.UnOccupied
       },
       {
+        id: 6,
         num: "402",
         category: "AC Studio Prem",
         capacity: 6,

@@ -5,6 +5,7 @@ export enum RoomStatus {
 }
 
 export interface Room {
+  id: number,
   num: string;
   capacity: number;
   category: string;
@@ -12,7 +13,7 @@ export interface Room {
   checkinDate: Date;
   expCheckoutDate: Date;
   guestName: string;
-  guestAge: string;
+  guestAge: number;
   guestAddressLine1: string;
   guestAddressLine2: string;
   guestCountry: string;
