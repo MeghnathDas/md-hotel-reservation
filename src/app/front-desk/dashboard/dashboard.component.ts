@@ -12,10 +12,11 @@ import { Room, AppState } from "../../models";
 export class DashboardComponent implements OnInit {
   rooms: Observable<Room[]>;
 
-  constructor(private roomStore: Store<AppState>) {
+  constructor(private roomServ: RoomsService) {
   }
 
   ngOnInit(): void {
-    this.rooms = this.roomStore.select(store => store.rooms);
+    this.rooms = this.roomServ.getRooms();
+    console.log(this.rooms);
   }
 }

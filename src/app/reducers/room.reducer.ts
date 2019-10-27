@@ -25,7 +25,7 @@ const initialState: Room[] = [
     capacity: 2,
     status: RoomStatus.Occupied,
     checkinDate: new Date(),
-    expCheckoutDate: this.dummyExpChkOutDate,
+    expCheckoutDate: new Date(),
 
     guestName: 'Demo guest',
     guestAge: 35,
