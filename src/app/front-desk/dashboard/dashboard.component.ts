@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rooms = this.roomServ.getRooms();
-    console.log(this.rooms);
+    this.roomServ.getRooms().subscribe(dta => this.rooms = dta);
   }
 }

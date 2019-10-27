@@ -12,7 +12,6 @@ export class AppComponent  {
   coNme = 'MD';
   collapsed = true;
 
-  constructor(private roomStore: Store<AppState>) {
-    console.log(this.roomStore.select(store => store.rooms));
+  constructor() {
   }
 }

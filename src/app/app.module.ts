@@ -10,6 +10,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from "./app.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { RoomReducer } from "./reducers";
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDbServ } from './api/in-memory-db-serv.db.api';
 
 @NgModule({
   imports: [
@@ -17,10 +19,9 @@ import { RoomReducer } from "./reducers";
     FormsModule,
     NgbModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      room: RoomReducer
-    }),
-    StoreDevtoolsModule.instrument(),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDbServ, { dataEncapsulation: false }
+    )  
   ],
   declarations: [AppComponent, SettingsComponent],
   bootstrap: [AppComponent]

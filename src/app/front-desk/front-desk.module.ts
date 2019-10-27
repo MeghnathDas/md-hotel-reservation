@@ -7,9 +7,15 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { CheckInComponent } from "./check-in/check-in.component";
 import { CheckOutComponent } from "./check-out/check-out.component";
 import { RoomsService } from "../services";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  imports: [FrontDeskRoutingModule, CommonModule, FormsModule],
+  imports: [
+    FrontDeskRoutingModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule
+  ],
   declarations: [
     FrontDeskComponent,
     DashboardComponent,
