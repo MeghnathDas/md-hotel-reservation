@@ -7,7 +7,6 @@ import { NavMenuItem } from '../models';
   styleUrls: ['./front-desk.component.css']
 })
 export class FrontDeskComponent implements OnInit {
-  selectedMnu: NavMenuItem = {};
   menus = [
     { 
       id: 1,
@@ -27,7 +26,6 @@ export class FrontDeskComponent implements OnInit {
   ];
 
   constructor() {
-    this.selectedMnu = this.menus[0];
   }
 
   ngOnInit() {
@@ -35,6 +33,5 @@ export class FrontDeskComponent implements OnInit {
   }
 
   onMenuSelect(selMnu: NavMenuItem) {
-    this.selectedMnu = selMnu;
   }
 }

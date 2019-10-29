@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from "@ngrx/store";
-import { Room, AppState } from "./models";
+import { Room } from "./models";
 
 @Component({
   selector: 'md-app',

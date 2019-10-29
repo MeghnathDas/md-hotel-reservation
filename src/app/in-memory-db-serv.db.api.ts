@@ -1,5 +1,5 @@
 import { InMemoryDbService } from "angular-in-memory-web-api";
-import { Room, RoomStatus } from "../models";
+import { Room, RoomStatus } from "./models";
 
 export class InMemoryDbServ implements InMemoryDbService {
   private dummyExpChkOutDate: Date = new Date();
@@ -107,6 +107,6 @@ export class InMemoryDbServ implements InMemoryDbService {
         guestContact: undefined
       }
     ];
-    return { rooms };
+    return { rooms: rooms };
   }
 }

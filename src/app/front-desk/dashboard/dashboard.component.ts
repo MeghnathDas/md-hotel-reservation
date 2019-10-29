@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RoomsService } from "../../services";
 import { Observable } from "rxjs";
-import { Store } from "@ngrx/store";
-import { Room, AppState } from "../../models";
+import { Room } from "../../models";
 
 @Component({
   selector: "app-dashboard",
@@ -16,6 +15,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.roomServ.getRooms().subscribe(dta => this.rooms = dta);
+    this.roomServ.getRooms().subscribe(dta => {
+      console.log(dta);
+      this.rooms = dta;
+    });
   }
 }
