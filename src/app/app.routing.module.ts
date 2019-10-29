@@ -17,7 +17,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'front-desk',
     pathMatch: 'full'
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
