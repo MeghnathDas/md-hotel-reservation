@@ -8,13 +8,18 @@ import { CheckInComponent } from "./check-in/check-in.component";
 import { CheckOutComponent } from "./check-out/check-out.component";
 import { RoomsService } from "../services";
 import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDbServ } from '../in-memory-db-serv.db.api';
 
 @NgModule({
   imports: [
     FrontDeskRoutingModule,
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forFeature(
+      InMemoryDbServ, { dataEncapsulation: false }
+    ),
   ],
   declarations: [
     FrontDeskComponent,

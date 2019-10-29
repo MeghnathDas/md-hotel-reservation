@@ -7,8 +7,8 @@ import { AppRoutingModule } from "./app.routing.module";
 
 import { AppComponent } from "./app.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDbServ } from './in-memory-db-serv.db.api';
+import { HttpClientModule } from '@angular/common/http';
+import { RoomsService } from "./services";
 
 @NgModule({
   imports: [
@@ -16,9 +16,7 @@ import { InMemoryDbServ } from './in-memory-db-serv.db.api';
     FormsModule,
     NgbModule,
     AppRoutingModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDbServ, { dataEncapsulation: false }
-    )  
+    HttpClientModule 
   ],
   declarations: [AppComponent, SettingsComponent],
   bootstrap: [AppComponent]

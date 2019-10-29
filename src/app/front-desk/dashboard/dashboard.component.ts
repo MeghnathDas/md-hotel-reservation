@@ -9,14 +9,13 @@ import { Room } from "../../models";
   templateUrl: "./dashboard.component.html"
 })
 export class DashboardComponent implements OnInit {
-  rooms: Observable<Room[]>;
+  rooms: Room[];
 
   constructor(private roomServ: RoomsService) {
   }
 
   ngOnInit(): void {
     this.roomServ.getRooms().subscribe(dta => {
-      console.log(dta);
       this.rooms = dta;
     });
   }
