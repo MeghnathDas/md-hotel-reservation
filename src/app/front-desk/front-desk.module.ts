@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDbServ } from '../in-memory-db-serv.db.api';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientInMemoryWebApiModule.forFeature(
       InMemoryDbServ, { dataEncapsulation: false }
     ),
+    ReactiveFormsModule
   ],
   declarations: [
     FrontDeskComponent,
