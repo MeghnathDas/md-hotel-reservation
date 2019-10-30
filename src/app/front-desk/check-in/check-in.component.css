@@ -1,6 +1,17 @@
 .check-in-form {
   max-width: 600px;
 }
+.form-group {
+    margin-bottom: .6rem;
+}
+.form-group > label{
+    margin-bottom: .1rem;
+}
+.form-control,
+.input-group-text,
+.btn {
+  font-size: small;
+}
 .pax-area {
   max-width: 100px;
 }
@@ -14,6 +25,7 @@
 .form-group > label,
 .form-group > div > div > label {
   font-weight: 500;
+  font-size: small;
 }
 .form-group > small {
   font-size: x-small;
