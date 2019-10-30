@@ -11,10 +11,10 @@ html, body {
     background: lightgray;
 }
 
-.nav-tabs .nav-link {
-    border-top-left-radius: 0em;
-    border-top-right-radius: 0em;
+.nav-tabs .nav-link, .form-control, .card, .input-group, .multiselect-dropdown {
+    border-radius: 0em;
 }
-.card {
-  border-radius: 0em;
+
+::ng-deep .multiselect-dropdown {
+    border-radius: 0em;
 }

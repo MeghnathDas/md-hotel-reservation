@@ -10,12 +10,16 @@ import { RoomsService } from "../services";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDbServ } from '../in-memory-db-serv.db.api';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   imports: [
     FrontDeskRoutingModule,
     CommonModule,
     FormsModule,
+    NgbModule,
+    NgMultiSelectDropDownModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forFeature(
       InMemoryDbServ, { dataEncapsulation: false }

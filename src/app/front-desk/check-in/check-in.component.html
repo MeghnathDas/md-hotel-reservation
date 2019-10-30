@@ -1,1 +1,71 @@
-<p>This is Check-In</p>
+<form>
+	<div class="form-group">
+		<label for="gNme">Guest</label>
+		<input type="name" class="form-control" name="gNme" placeholder="Enter guest name">
+  </div>
+		<div class="form-group">
+			<label for="addr">Address</label>
+			<input type="text" class="form-control" name="contactNfo" placeholder="Enter address">
+  </div>
+			<div class="form-group">
+				<label for="contactNfo">Contact Info</label>
+				<input type="text" class="form-control" name="contactNfo" aria-describedby="contactHelp" placeholder="Enter contact information">
+				<small name="contactHelp" class="form-text text-muted">We'll never share your contact details with anyone else.</small>
+			</div>
+			<div class="form-group">
+				<div class="form-row">
+					<div class="col pax-area">
+            <label for="contactNfo">PAX</label>
+						<input type="number" class="form-control" placeholder="PAX">
+          </div>
+          <div class="col">
+            <label for="contactNfo">Expected Checkout Date</label>
+            <div class="input-group">
+              <input class="form-control" placeholder="YYYY-MM-DD"
+                    name="dp" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="roomSelection">Available Rooms</label>
+        <!--<div class="input-group av-room-area">
+          <select class="input-group-prepend" name="roomCatSelection">
+            <option>Demo Category 1</option>
+            <option>Demo Category 2</option>
+            <option>Demo Category 3</option>
+            <option>Demo Category 4</option>
+          </select> 
+          <select class="form-control" name="roomSelection">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>-->
+        <select class="form-control av-room-area" name="roomSelection">
+          <option>123 - Demo Category 1</option>
+          <option>456 - Demo Category 2</option>
+          <option>555 - Demo Category 3</option>
+          <option>222 - Demo Category 4</option>
+        </select>
+      </div>
+      <ng-multiselect-dropdown
+      [placeholder]="'Select rooms'"
+      [data]="avRooms"
+      [(ngModel)]="selectedItems"
+      [settings]="dropdownSettings"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)">
+      </ng-multiselect-dropdown>
+			<div class="form-group">
+					<label for="amt">Total Amount</label>
+		      <input type="text" class="form-control" name="amt" readonly> 
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Save Details</button>
+</form>
