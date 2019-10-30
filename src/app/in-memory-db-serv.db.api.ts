@@ -16,6 +16,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Delux",
         capacity: 2,
         status: RoomStatus.UnOccupied,
+        rate: 2500,
 
         checkinDate: undefined,
         expCheckoutDate: undefined,
@@ -32,6 +33,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Delux",
         capacity: 2,
         status: RoomStatus.Occupied,
+        rate: 2500,
         checkinDate: new Date(),
         expCheckoutDate: this.dummyExpChkOutDate,
 
@@ -48,6 +50,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Delux",
         capacity: 2,
         status: RoomStatus.Uncleaned,
+        rate: 2500,
 
         checkinDate: undefined,
         expCheckoutDate: undefined,
@@ -64,6 +67,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Double",
         capacity: 4,
         status: RoomStatus.UnOccupied,
+        rate: 4000,
 
         checkinDate: undefined,
         expCheckoutDate: undefined,
@@ -80,6 +84,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Studio",
         capacity: 4,
         status: RoomStatus.UnOccupied,
+        rate: 5000,
 
         checkinDate: undefined,
         expCheckoutDate: undefined,
@@ -96,6 +101,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         category: "AC Studio Prem",
         capacity: 6,
         status: RoomStatus.UnOccupied,
+        rate: 6000,
 
         checkinDate: undefined,
         expCheckoutDate: undefined,

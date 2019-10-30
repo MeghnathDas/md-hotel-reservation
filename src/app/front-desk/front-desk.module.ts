@@ -11,7 +11,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDbServ } from '../in-memory-db-serv.db.api';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     CommonModule,
     FormsModule,
     NgbModule,
-    NgMultiSelectDropDownModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forFeature(
       InMemoryDbServ, { dataEncapsulation: false }

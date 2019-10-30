@@ -9,6 +9,7 @@ export interface Room {
   num: string;
   capacity: number;
   category: string;
+  rate: number;
   status: RoomStatus;
   checkinDate: Date;
   expCheckoutDate: Date;

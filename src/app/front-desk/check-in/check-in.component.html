@@ -47,18 +47,10 @@
             <option>5</option>
           </select>
         </div>-->
-        <select class="form-control av-room-area" name="roomSelection">
-          <option *ngFor="let rom of avRooms">{{rom.num + ' - ' + rom.category}}</option>
+        <select multiple class="form-control av-room-area" name="roomSelection">
+          <option *ngFor="let rom of avRooms">{{rom.num + ' - ' + rom.category + ' ( Rate: ' + rom.rate + ' )'}}</option>
         </select>
       </div>
-      <!--<ng-multiselect-dropdown
-      [placeholder]="'Select rooms'"
-      [data]="avRooms"
-      [(ngModel)]="selectedItems"
-      [settings]="dropdownSettings"
-      (onSelect)="onItemSelect($event)"
-      (onSelectAll)="onSelectAll($event)">
-      </ng-multiselect-dropdown>-->
 			<div class="form-group amt-area">
 					<label for="amt">Total Amount</label>
 		      <input type="text" class="form-control" name="amt" readonly> 
