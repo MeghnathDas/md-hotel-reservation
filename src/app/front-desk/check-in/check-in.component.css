@@ -1,3 +1,6 @@
+.check-in-form {
+  max-width: 600px;
+}
 .pax-area {
   max-width: 100px;
 }
@@ -6,4 +9,12 @@
 }
 .amt-area {
   max-width: 300px;
+}
+
+.form-group > label,
+.form-group > div > div > label {
+  font-weight: 500;
+}
+.form-group > small {
+  font-size: x-small;
 }
