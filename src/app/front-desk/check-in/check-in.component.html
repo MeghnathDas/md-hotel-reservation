@@ -18,20 +18,21 @@
             <label for="contactNfo">PAX</label>
 						<input type="number" class="form-control" placeholder="PAX">
           </div>
-          <div class="col">
+          <div class="col date-area">
             <label for="contactNfo">Expected Checkout Date</label>
             <div class="input-group">
               <input class="form-control" placeholder="YYYY-MM-DD"
                     name="dp" ngbDatepicker #d="ngbDatepicker">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                </button>
               </div>
             </div>            
           </div>
         </div>
       </div>
       <div class="form-group">
-        <label for="roomSelection">Available Rooms</label>
+        <label for="roomSelection">Select Rooms</label>
         <!--<div class="input-group av-room-area">
           <select class="input-group-prepend" name="roomCatSelection">
             <option>Demo Category 1</option>
@@ -48,13 +49,24 @@
           </select>
         </div>-->
         <select multiple class="form-control av-room-area" name="roomSelection">
-          <option *ngFor="let rom of avRooms">{{rom.num + ' - ' + rom.category + ' ( Rate: ' + rom.rate + ' )'}}</option>
+          <option *ngFor="let rom of avRooms">
+            {{rom.num + ' - ' + rom.category + ' ( Rate: ' + (rom.rate | number : '1.2-2')  + ' )'}}
+          </option>
         </select>
       </div>
-			<div class="form-group amt-area">
-					<label for="amt">Total Amount</label>
-		      <input type="text" class="form-control" name="amt" readonly> 
+			<div class="form-group">
+        <div class="form-row">
+          <div class="col amt-area">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Total Amount</span>
+              </div>
+              <span type="text" class="form-control"></span>
+            </div>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary">Save Details</button>
+          </div>
+        </div>
       </div>
-      
-      <button type="submit" class="btn btn-primary">Save Details</button>
 </form>
