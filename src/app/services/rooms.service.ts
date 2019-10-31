@@ -16,6 +16,10 @@ export class RoomsService {
     return this.httpc.get<Room[]>(this.roomsUrl);
   }
 
+  public getUnOccupiedRooms(): Observable<Room[]> {
+    return this.httpc.get<Room[]>(`${this.roomsUrl}?status=0`);
+  }
+
   public addCheckIn(chkIn: CheckIn) {
     this.getRooms()
         .subscribe(dta => {

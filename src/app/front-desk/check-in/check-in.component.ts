@@ -33,7 +33,7 @@ export class CheckInComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.roomServ.getRooms().subscribe(dta => {
+    this.roomServ.getUnOccupiedRooms().subscribe(dta => {
       this.avRooms = dta;
     });
 
@@ -46,7 +46,6 @@ export class CheckInComponent implements OnInit {
     this.checkInForm.updateValueAndValidity();
 
     this.checkInForm.controls.chkOutDate.valueChanges.subscribe(nwValue => {
-        const dtTo = moment([nwValue.year, nwValue.month-1, nwValue.day]);
         this.onRoomSelection(this.checkInForm.value.selRooms, nwValue);
     });
     this.checkInForm.controls.selRooms.valueChanges.subscribe(nwValue => {
@@ -57,6 +56,8 @@ export class CheckInComponent implements OnInit {
 
   onRoomSelection(selRooms: Room[], chkOutDt): void {
     if (!selRooms) { return; }
+    if (!chkOutDt) { return; }
+    
     const dtTo = moment([chkOutDt.year, chkOutDt.month-1, chkOutDt.day]);
     const dtFrom = moment(moment().format('YYYY-MM-DD'), 'YYYY-MM-DD');
 
@@ -80,6 +81,8 @@ export class CheckInComponent implements OnInit {
     };
     this.roomServ.addCheckIn(chInDta).subscribe(() => {
       this.checkInForm.reset();
+      this.totalAmt = undefined;
+      this.nameField.nativeElement.focus();      
     });
   }
 }
@@ -93,16 +96,17 @@ export function DateNotLessThanTodayValidator(dateControlName: string): Validato
 
         // Return null if any of the control is not found
         if (!dateControl) { return null; }
-
+        if (!dateControl.value) { return null; }
+        
         // Get the value entered in the control
-        const dateControlValue = moment([dateControl.value.year, dateControl.value.month-1, dateControl.value.day]);
+        const dateControlMomentValue = moment([dateControl.value.year, dateControl.value.month-1, dateControl.value.day]);
         const dtNow = moment(moment().format('YYYY-MM-DD'), 'YYYY-MM-DD');
 
         // return null if any of the values are not filled
-        if (!dateControlValue) { return null; }
+        if (!dateControlMomentValue) { return null; }
 
         // Compare the value with today's date        
-        return dtNow.isBefore(dateControlValue) ? null :  { dateSelectionError: true };
+        return dtNow.isBefore(dateControlMomentValue) ? null :  { dateSelectionError: true };
     };
 }
 

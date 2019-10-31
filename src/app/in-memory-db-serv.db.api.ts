@@ -112,7 +112,7 @@ export class InMemoryDbServ implements InMemoryDbService {
     return { rooms: roomDta, checkIns: checkInDta };
   }
 
-  genId(heroes: CheckIn[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(chkIn => chkIn.id)) + 1 : 1;
+  genId<T extends Room | CheckIn>(myTable: T[]): number {
+    return myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 1;
   }
 }
