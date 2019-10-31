@@ -31,16 +31,16 @@ export class InMemoryDbServ implements InMemoryDbService {
         num: "302",
         category: "AC Delux",
         capacity: 2,
-        status: RoomStatus.Occupied,
+        status: RoomStatus.UnOccupied,
         rate: 2500,
-        checkinDate: new Date(),
-        expCheckoutDate: this.dummyExpChkOutDate,
 
-        guestName: "Demo guest",
-        guestAge: 35,
-        guestAddress: "Demo Address line 1",
-        guestCountry: "India",
-        guestContact: "demo@demo.com"
+        checkinDate: undefined,
+        expCheckoutDate: undefined,
+        guestName: undefined,
+        guestAge: undefined,
+        guestAddress: undefined,
+        guestCountry: undefined,
+        guestContact: undefined
       },
       {
         id: 3,

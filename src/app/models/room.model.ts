@@ -15,8 +15,7 @@ export interface Room {
   expCheckoutDate: Date;
   guestName: string;
   guestAge: number;
-  guestAddressLine1: string;
-  guestAddressLine2: string;
+  guestAddress: string;
   guestCountry: string;
   guestContact: string;
 }
