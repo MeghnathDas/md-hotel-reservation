@@ -1,5 +1,5 @@
 export interface CheckIn {
-  no: number;
+  id: number;
   guestName: string;
   address: string;
   contact: string;

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef  } from "@angular/core";
 import { RoomsService } from "../../services";
 import { Observable } from "rxjs";
-import { Room } from "../../models";
+import { Room, CheckIn } from "../../models";
 import { FormGroup, FormControl, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
@@ -66,10 +66,21 @@ export class CheckInComponent implements OnInit {
     }
 
   }
+
   doCheckin(): void {
-    console.log(this.checkInForm.value);
+    const chInDta: CheckIn = {
+      id: undefined,
+      guestName: this.checkInForm.value.guestName,
+      address: this.checkInForm.value.address,
+      contact: this.checkInForm.value.contact,
+      pax: this.checkInForm.value.pax,
+      expCheckOutDate: this.checkInForm.value.chkOutDate,
+      occupiedRoomIDs: this.checkInForm.value.selRooms.map(rm => rm.id)
+    };
+    this.roomServ.addCheckIn(chInDta);
   }
 }
+
 export function DateNotLessThanTodayValidator(dateControlName: string): ValidatorFn {
     return (group: FormGroup)
         : ValidationErrors | null => {

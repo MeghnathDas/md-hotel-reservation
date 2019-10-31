@@ -1,5 +1,5 @@
 import { InMemoryDbService } from "angular-in-memory-web-api";
-import { Room, RoomStatus } from "./models";
+import { Room, RoomStatus, CheckIn } from "./models";
 
 export class InMemoryDbServ implements InMemoryDbService {
   private dummyExpChkOutDate: Date = new Date();
@@ -9,7 +9,7 @@ export class InMemoryDbServ implements InMemoryDbService {
   }
 
   createDb() {
-    const rooms: Room[] = [
+    const roomDta: Room[] = [
       {
         id: 1,
         num: "301",
@@ -22,8 +22,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         expCheckoutDate: undefined,
         guestName: undefined,
         guestAge: undefined,
-        guestAddressLine1: undefined,
-        guestAddressLine2: undefined,
+        guestAddress: undefined,
         guestCountry: undefined,
         guestContact: undefined
       },
@@ -39,8 +38,7 @@ export class InMemoryDbServ implements InMemoryDbService {
 
         guestName: "Demo guest",
         guestAge: 35,
-        guestAddressLine1: "Demo Address line 1",
-        guestAddressLine2: "Demo Address line 2",
+        guestAddress: "Demo Address line 1",
         guestCountry: "India",
         guestContact: "demo@demo.com"
       },
@@ -56,8 +54,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         expCheckoutDate: undefined,
         guestName: undefined,
         guestAge: undefined,
-        guestAddressLine1: undefined,
-        guestAddressLine2: undefined,
+        guestAddress: undefined,
         guestCountry: undefined,
         guestContact: undefined
       },
@@ -73,8 +70,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         expCheckoutDate: undefined,
         guestName: undefined,
         guestAge: undefined,
-        guestAddressLine1: undefined,
-        guestAddressLine2: undefined,
+        guestAddress: undefined,
         guestCountry: undefined,
         guestContact: undefined
       },
@@ -90,8 +86,7 @@ export class InMemoryDbServ implements InMemoryDbService {
         expCheckoutDate: undefined,
         guestName: undefined,
         guestAge: undefined,
-        guestAddressLine1: undefined,
-        guestAddressLine2: undefined,
+        guestAddress: undefined,
         guestCountry: undefined,
         guestContact: undefined
       },
@@ -107,12 +102,13 @@ export class InMemoryDbServ implements InMemoryDbService {
         expCheckoutDate: undefined,
         guestName: undefined,
         guestAge: undefined,
-        guestAddressLine1: undefined,
-        guestAddressLine2: undefined,
+        guestAddress: undefined,
         guestCountry: undefined,
         guestContact: undefined
       }
     ];
-    return { rooms: rooms };
+    const checkInDta: CheckIn[] = [ ];
+
+    return { rooms: roomDta, checkIns: checkInDta };
   }
 }
