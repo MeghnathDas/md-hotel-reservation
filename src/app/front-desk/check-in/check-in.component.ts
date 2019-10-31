@@ -20,30 +20,26 @@ export class CheckInComponent implements OnInit {
   minDt = new Date();
   funcIsDateDisabled;
 
-  checkInForm = new FormGroup({
-    guestName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    address: new FormControl('', [Validators.required, Validators.minLength(10)]),
-    contact: new FormControl('', [Validators.required, Validators.minLength(10)]),
-    pax: new FormControl(1, [Validators.required, Validators.min(1)]),
-    chkOutDate: new FormControl({}, [Validators.required]),
-    selRooms: new FormControl([], [Validators.required, Validators.minLength(1)])
-  });
+  checkInForm: FormGroup;
 
   constructor(private roomServ: RoomsService) {
   }
 
   ngOnInit(): void {
-    this.roomServ.getUnOccupiedRooms().subscribe(dta => {
-      this.avRooms = dta;
-    });
-
+    this.getRooms();
     const tempDt =  moment().add(1, 'days').toObject();
     const tempNgbDate = {day: tempDt.date, month: tempDt.months+1, year: tempDt.years}; 
+    
+    this.checkInForm = new FormGroup({
+      guestName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      address: new FormControl('', [Validators.required, Validators.minLength(10)]),
+      contact: new FormControl('', [Validators.required, Validators.minLength(10)]),
+      pax: new FormControl(1, [Validators.required, Validators.min(1)]),
+      chkOutDate: new FormControl(tempNgbDate, [Validators.required]),
+      selRooms: new FormControl([], [Validators.required, Validators.minLength(1)])
+    }, {validators: [ DateNotLessThanTodayValidator('chkOutDate') ]});
+    
     this.funcIsDateDisabled = (date: NgbDate, current: {month: number}) => date.before(tempNgbDate);
-
-    this.checkInForm.setValidators([DateNotLessThanTodayValidator('chkOutDate')]);
-    this.checkInForm.controls.chkOutDate.setValue(tempNgbDate);
-    this.checkInForm.updateValueAndValidity();
 
     this.checkInForm.controls.chkOutDate.valueChanges.subscribe(nwValue => {
         this.onRoomSelection(this.checkInForm.value.selRooms, nwValue);
@@ -54,6 +50,11 @@ export class CheckInComponent implements OnInit {
     this.nameField.nativeElement.focus();
   }
 
+  getRooms(): void {    
+    this.roomServ.getUnOccupiedRooms().subscribe(dta => {
+      this.avRooms = dta;
+    });
+  }
   onRoomSelection(selRooms: Room[], chkOutDt): void {
     if (!selRooms) { return; }
     if (!chkOutDt) { return; }
@@ -80,8 +81,9 @@ export class CheckInComponent implements OnInit {
       occupiedRoomIDs: this.checkInForm.value.selRooms.map(rm => rm.id)
     };
     this.roomServ.addCheckIn(chInDta).subscribe(() => {
-      this.checkInForm.reset();
+      this.getRooms();
       this.totalAmt = undefined;
+      this.checkInForm.reset();
       this.nameField.nativeElement.focus();      
     });
   }
