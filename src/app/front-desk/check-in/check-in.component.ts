@@ -80,7 +80,7 @@ export class CheckInComponent implements OnInit {
       expCheckOutDate: moment([chkOutDt.year, chkOutDt.month-1, chkOutDt.day]).toDate(),
       occupiedRoomIDs: this.checkInForm.value.selRooms.map(rm => rm.id)
     };
-    this.roomServ.addCheckIn(chInDta).subscribe(() => {
+    this.roomServ.addCheckIn(chInDta).subscribe(dta => {
       this.getRooms();
       this.totalAmt = undefined;
       this.checkInForm.reset();

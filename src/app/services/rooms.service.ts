@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Room, RoomStatus, CheckIn } from "../models";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
@@ -25,7 +25,7 @@ export class RoomsService {
   }
 
   public addCheckIn(chkIn: CheckIn) {
-    this.getRoomsById(chkIn.occupiedRoomIDs)
+    return this.getRoomsById(chkIn.occupiedRoomIDs)
         .pipe(switchMap(rms => {
                         const dta = rms.map(rm => {                    
                           rm.status = RoomStatus.Occupied;
