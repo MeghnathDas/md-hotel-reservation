@@ -27,8 +27,12 @@
   font-weight: 500;
   font-size: small;
 }
-.form-group > small {
-  font-size: x-small;
+.form-group > small, .error {
+  font-size: x-small !important;
+}
+
+.error {
+  position: absolute;
 }
 
 button.calendar, button.calendar:active {
