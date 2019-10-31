@@ -16,23 +16,24 @@ export class RoomsService {
     return this.httpc.get<Room[]>(this.roomsUrl);
   }
 
-  public addCheckIn(chkIn: CheckIn): void {
-    this.httpc.get<Room[]>(this.roomsUrl)
+  public addCheckIn(chkIn: CheckIn) {
+    this.getRooms()
         .subscribe(dta => {
-          const fRms = dta.filter(rm => chkIn.occupiedRoomIDs.includes(rm.id));
-          fRms.forEach(rm => {
-            rm.status = RoomStatus.Occupied;
-            rm.checkinDate = new Date();
-            rm.expCheckoutDate = chkIn.expCheckOutDate;
-
-            rm.guestName = chkIn.guestName;
-            rm.guestAge = 0;
-            rm.guestAddress = chkIn.address;
-            rm.guestCountry = "";
-            rm.guestContact = chkIn.contact;      
-          });
+          dta.filter(rm => chkIn.occupiedRoomIDs.includes(rm.id))
+             .forEach(rm => {
+                rm.status = RoomStatus.Occupied;
+                rm.checkinDate = new Date();
+                rm.expCheckoutDate = chkIn.expCheckOutDate;
+                rm.guestName = chkIn.guestName;
+                rm.guestAge = 0;
+                rm.guestAddress = chkIn.address;
+                rm.guestCountry = "";
+                rm.guestContact = chkIn.contact; 
+                
+                this.httpc.put(this.roomsUrl, rm);
+              });
         });
 
-    // this.httpc.post(this.checkInUrl, chkIn);
+    return this.httpc.post(this.checkInUrl, chkIn);
   }
 }

@@ -56,6 +56,7 @@ export class CheckInComponent implements OnInit {
   }
 
   onRoomSelection(selRooms: Room[], chkOutDt): void {
+    if (!selRooms) { return; }
     const dtTo = moment([chkOutDt.year, chkOutDt.month-1, chkOutDt.day]);
     const dtFrom = moment(moment().format('YYYY-MM-DD'), 'YYYY-MM-DD');
 
@@ -68,16 +69,18 @@ export class CheckInComponent implements OnInit {
   }
 
   doCheckin(): void {
+    const chkOutDt = this.checkInForm.value.chkOutDate;
     const chInDta: CheckIn = {
-      id: undefined,
       guestName: this.checkInForm.value.guestName,
       address: this.checkInForm.value.address,
       contact: this.checkInForm.value.contact,
       pax: this.checkInForm.value.pax,
-      expCheckOutDate: this.checkInForm.value.chkOutDate,
+      expCheckOutDate: moment([chkOutDt.year, chkOutDt.month-1, chkOutDt.day]).toDate(),
       occupiedRoomIDs: this.checkInForm.value.selRooms.map(rm => rm.id)
     };
-    this.roomServ.addCheckIn(chInDta);
+    this.roomServ.addCheckIn(chInDta).subscribe(() => {
+      this.checkInForm.reset();
+    });
   }
 }
 
