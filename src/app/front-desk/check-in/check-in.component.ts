@@ -81,11 +81,14 @@ export class CheckInComponent implements OnInit {
       occupiedRoomIDs: this.checkInForm.value.selRooms.map(rm => rm.id)
     };
     this.roomServ.addCheckIn(chInDta).subscribe(dta => {
-      this.getRooms();
-      this.totalAmt = undefined;
-      this.checkInForm.reset();
-      this.nameField.nativeElement.focus();      
+      this.resetForm();
     });
+  }
+  resetForm(): void {
+    this.getRooms();
+    this.totalAmt = undefined;
+    this.checkInForm.reset();
+    this.nameField.nativeElement.focus(); 
   }
 }
 
