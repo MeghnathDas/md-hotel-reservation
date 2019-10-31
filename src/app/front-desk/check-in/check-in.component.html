@@ -1,7 +1,8 @@
 <form [formGroup]="checkInForm" (ngSubmit)="doCheckin()" class="check-in-form">
 	<div class="form-group">
-		<label for="name">Guest</label>
-		<input type="text" formControlName="guestName" class="form-control" name="name" placeholder="Enter guest name">
+		<label for="guestName">Guest</label>
+		<input type="text" [autofocus]="true" formControlName="guestName" #guestName
+      class="form-control" name="guestName" placeholder="Enter guest name">
     <label class="error text-danger"
     *ngIf="checkInForm.get('guestName').invalid && (checkInForm.dirty || checkInForm.touched)">
       * Guest name is mandatory, text length must be greater than 3
@@ -53,21 +54,6 @@
       </div>
       <div class="form-group">
         <label for="roomSelection">Select Rooms</label>
-        <!--<div class="input-group av-room-area">
-          <select class="input-group-prepend" name="roomCatSelection">
-            <option>Demo Category 1</option>
-            <option>Demo Category 2</option>
-            <option>Demo Category 3</option>
-            <option>Demo Category 4</option>
-          </select> 
-          <select class="form-control" name="roomSelection">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>-->
         <select multiple formControlName="selRooms" name="roomSelection" class="form-control av-room-area" name="roomSelection">
           <option *ngFor="let rom of avRooms" [value]="rom">
             {{rom.num + ' - ' + rom.category + ' ( Rate: ' + (rom.rate | number : '1.2-2')  + ' )'}}

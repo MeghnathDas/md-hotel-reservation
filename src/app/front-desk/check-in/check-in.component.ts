@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef  } from "@angular/core";
 import { RoomsService } from "../../services";
 import { Observable } from "rxjs";
 import { Room } from "../../models";
@@ -13,6 +13,7 @@ import moment from 'moment';
   styleUrls: ["./check-in.component.css"]
 })
 export class CheckInComponent implements OnInit {
+  @ViewChild("guestName") nameField: ElementRef;
   avRooms: Room[] = [];
   totalAmt: number;
   expChkOutDtInitial = {};
@@ -51,6 +52,7 @@ export class CheckInComponent implements OnInit {
     this.checkInForm.controls.selRooms.valueChanges.subscribe(nwValue => {
         this.onRoomSelection(nwValue, this.checkInForm.value.chkOutDate);
     });
+    this.nameField.nativeElement.focus();
   }
 
   onRoomSelection(selRooms: Room[], chkOutDt): void {
