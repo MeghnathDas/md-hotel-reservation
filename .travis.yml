@@ -2,8 +2,6 @@ dist: trusty
 
 sudo: false
 
-os: linux
-
 language: node_js
 
 addons:
@@ -24,7 +22,7 @@ install:
   - npm install
 
 script:
-  - npm build
+  - npm run-script build
   - mv dist/404.html
 
 deploy:
