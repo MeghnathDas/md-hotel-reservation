@@ -1,3 +1,5 @@
+os: linux
+
 language: node_js
 
 node_js:
@@ -16,7 +18,7 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: build
   email: meghnath.babin@gmail.com
