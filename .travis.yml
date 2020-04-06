@@ -6,19 +6,19 @@ node_js:
 cache:
   directories:
     - node_modules
-  npm: true
+  yarn: true
 
 install:
-  - npm install
+  - yarn install
 
 script:
-  - npm build
+  - yarn build
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist
+  local_dir: build
   email: meghnath.babin@gmail.com
   name: Meghnath Das
   target-branch: gh-pages
