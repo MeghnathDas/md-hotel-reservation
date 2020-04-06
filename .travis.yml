@@ -23,6 +23,6 @@ deploy:
   local_dir: build
   email: meghnath.babin@gmail.com
   name: Meghnath Das
-  target-branch: gh-pages
+  target_branch: gh-pages
   on:
     branch: master
