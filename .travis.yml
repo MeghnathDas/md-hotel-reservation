@@ -17,7 +17,7 @@ deploy:
   provider: pages:git
   token: $GITHUB_TOKEN
   edge: true # opt in to dpl v2
-  local_dir: .
+  local_dir: dist
   email: meghnath.babin@gmail.com
   name: Meghnath Das
   target_branch: gh-pages
