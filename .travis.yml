@@ -21,7 +21,7 @@ deploy:
   provider: pages
   cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist
+  local_dir: build
   email: meghnath.babin@gmail.com
   name: Meghnath Das
   target_branch: gh-pages
