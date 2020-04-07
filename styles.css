@@ -1,0 +1,28 @@
+/* Add application styles & imports to this file! */
+
+.app-name {
+  padding-right: 8px;
+  font-weight: 500;
+  font-size: 1em !important;
+}
+
+html, body {
+    height: 100%;
+    background: lightgray;
+}
+
+.nav-tabs
+.nav-link,
+.form-control,
+.card,
+.input-group,
+.multiselect-dropdown,
+.btn,
+.input-group-text {
+    border-radius: 0em;
+}
+
+.btn-primary:disabled {
+  background-color: gray;
+  border-color: lightgray;
+}
