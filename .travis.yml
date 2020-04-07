@@ -12,6 +12,7 @@ install:
 
 script:
   - npm run-script build
+  - mv dist/index.html mv dist/404.html
 
 deploy:
   provider: pages:git
