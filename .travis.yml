@@ -14,10 +14,10 @@ script:
   - npm run-script build
 
 deploy:
-  provider: pages
-  cleanup: false
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true # opt in to dpl v2
+  local_dir: .
   email: meghnath.babin@gmail.com
   name: Meghnath Das
   target_branch: gh-pages
