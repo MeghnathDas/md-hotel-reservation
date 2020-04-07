@@ -12,10 +12,9 @@ install:
 
 script:
   - npm run-script build
-  - mv dist/index.html mv dist/404.html
 
 deploy:
-  provider: pages:git
+  provider: pages
   token: $GITHUB_TOKEN
   edge: true # opt in to dpl v2
   local_dir: dist
