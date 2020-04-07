@@ -9,7 +9,7 @@ import { AppComponent } from "./app.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomsService } from "./services";
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -21,6 +21,6 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   ],
   declarations: [AppComponent, SettingsComponent],
   bootstrap: [AppComponent],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }]
 })
 export class AppModule { }
