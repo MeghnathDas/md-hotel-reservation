@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomsService } from "./services";
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -16,9 +17,10 @@ import { RoomsService } from "./services";
     FormsModule,
     NgbModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule
   ],
   declarations: [AppComponent, SettingsComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
-export class AppModule {}
+export class AppModule { }
