@@ -11,7 +11,7 @@ install:
   - npm install
 
 script:
-  - npm run-script build -- --base-href='/md-hotel-reservation/'
+  - npm run-script build -- --base-href='/md-hotel-reservation/' --deploy-url='/md-hotel-reservation/'
 
 deploy:
   provider: pages
