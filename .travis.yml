@@ -19,7 +19,7 @@ script:
 
 deploy:
   provider: pages
-  cleanup: true
+  cleanup: false
   github_token: $GITHUB_TOKEN
   local_dir: dist
   email: meghnath.babin@gmail.com
