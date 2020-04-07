@@ -6,14 +6,12 @@
 - Bootstrap
 - Responsive Design
 - In-Memory Web API
+- Travis CI for deployment
 
 ### Tech Features
 - Angular Router, 
 - Lazy Loading and Feature Module, 
 - Angular Forms Validation
-
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-hotel-reservation)
 
 # Editor
 
