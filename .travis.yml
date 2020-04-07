@@ -1,0 +1,25 @@
+language: node_js
+
+node_js:
+   "10.14.2"
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run-script build
+
+deploy:
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true # opt in to dpl v2
+  local_dir: .
+  email: meghnath.babin@gmail.com
+  name: Meghnath Das
+  target_branch: gh-pages
+  on:
+    branch: master
