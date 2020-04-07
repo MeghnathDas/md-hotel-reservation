@@ -14,14 +14,11 @@ cache:
 install:
   - npm install
 
-script:
-  - npm run-script build
-
 deploy:
   provider: pages
   cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: build
+  local_dir: dist
   email: meghnath.babin@gmail.com
   name: Meghnath Das
   target_branch: gh-pages
